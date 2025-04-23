@@ -1,7 +1,14 @@
 {
+  "version": 2,
   "functions": {
-    "api/scrape.py": {
-      "runtime": "python3.11"
+    "api/*.py": {
+      "runtime": "vercel-python@3.9"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/handler.py"
+    }
+  ]
 }
